@@ -16,12 +16,12 @@ pipeline {
         steps {
           OCIUploadArtifact(credentialsId: '',
           uploadArtifactDetailsList: [[artifactPath: 'public.tar.gz',
-          repositoryId: '',
+          repositoryId: 'ocid1.artifactrepository.oc1.ca-toronto-1.0.amaaaaaamlvqqhqa4ef4adxi4y25zo3vgp2vxpjewrb4ljnxfvoyald5tjaa',
           repositoryType: 'GENERIC',
           sourcePath: 'public.tar.gz',
           version: "1.$BUILD_NUMBER"],
           [artifactPath: 'deployment_spec.yaml',
-          repositoryId: '',
+          repositoryId: 'ocid1.artifactrepository.oc1.ca-toronto-1.0.amaaaaaamlvqqhqa4ef4adxi4y25zo3vgp2vxpjewrb4ljnxfvoyald5tjaa',
           repositoryType: 'GENERIC',
           sourcePath: 'deployment_spec.yaml',
           version: "1.$BUILD_NUMBER"]
@@ -34,7 +34,7 @@ pipeline {
           credentialsId: '',
           displayName: "testDeployment${BUILD_NUMBER}",
           endpoint: 'https://devops.ca-toronto-1.oci.oraclecloud.com',
-          pipelineId: '',
+          pipelineId: 'ocid1.devopsdeploypipeline.oc1.ca-toronto-1.amaaaaaamlvqqhqaot2y2uj7mklyhjv2x4c5ji74rdebooot5xg4ba7ljdta',
           pollingConfig: [timeoutSeconds: 600, "pollingIntervalSeconds" : 5], executionMode: 'SYNC'
           )
       }
